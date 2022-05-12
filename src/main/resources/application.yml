@@ -1,0 +1,13 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:order;DB_CLOSE_DELAY=-1;MODE=MYSQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+
+mybatis:
+  configuration:
+    auto-mapping-behavior: partial
+    auto-mapping-unknown-column-behavior: none
+    map-underscore-to-camel-case: true
