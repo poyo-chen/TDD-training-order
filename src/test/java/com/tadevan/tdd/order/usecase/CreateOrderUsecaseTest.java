@@ -1,7 +1,8 @@
-package com.tadevan.tdd.core.usecase;
+package com.tadevan.tdd.order.usecase;
 
 import com.tadevan.tdd.controller.OrderDto;
 import com.tadevan.tdd.core.outgoing.CommodityRepo;
+import com.tadevan.tdd.core.usecase.CreateOrderUsecase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

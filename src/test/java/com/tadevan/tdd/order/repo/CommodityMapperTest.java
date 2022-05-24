@@ -1,6 +1,7 @@
-package com.tadevan.tdd.repo;
+package com.tadevan.tdd.order.repo;
 
 import com.tadevan.tdd.controller.CommodityDto;
+import com.tadevan.tdd.repo.CommodityMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
@@ -11,7 +12,8 @@ import java.util.List;
 @MybatisTest
 public class CommodityMapperTest {
 
-    @Autowired CommodityMapper commodityMapper;
+    @Autowired
+    CommodityMapper commodityMapper;
 
     @Test
     public void test_select_all_commodities(){
