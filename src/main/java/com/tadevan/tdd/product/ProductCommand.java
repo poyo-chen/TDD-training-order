@@ -1,10 +1,14 @@
 package com.tadevan.tdd.product;
 
-import lombok.Data;
+import java.math.BigDecimal;
 
-@Data
-public class ProductCommand {
+public interface ProductCommand {
 
-    public String status;
+    String getProductName();
 
+    BigDecimal getPrice();
+
+    String getUnit();
+
+    String getDesc();
 }

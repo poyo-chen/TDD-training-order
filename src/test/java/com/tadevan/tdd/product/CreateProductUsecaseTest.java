@@ -28,8 +28,15 @@ public class CreateProductUsecaseTest {
         productDto.setPrice(new BigDecimal(98.25));
         productDto.setUnit("CUP");
 
-        ProductCommand productCommand = createProductUsecase.create(productDto);
-        Mockito.verify(productRepo).save(productCommand);
-        Assertions.assertEquals(productCommand.getStatus(), "onSale");
+        Product product = createProductUsecase.create(productDto);
+        Mockito.verify(productRepo).save(product);
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(product.getStatus(), "onSale"),
+                () -> Assertions.assertEquals(product.getProductName(), "草莓冰淇淋"),
+                () -> Assertions.assertEquals(product.getDesc(), "100ML"),
+                () -> Assertions.assertEquals(product.getPrice(), new BigDecimal(98.25)),
+                () -> Assertions.assertEquals(product.getUnit(), "CUP")
+        );
+
     }
 }

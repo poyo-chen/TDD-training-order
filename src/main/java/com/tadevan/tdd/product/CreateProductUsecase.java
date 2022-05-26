@@ -7,11 +7,15 @@ public class CreateProductUsecase {
 
     private final ProductRepo productRepo;
 
-    public ProductCommand create(ProductDto productDto) {
-        ProductCommand productCommand = new ProductCommand();
-        productCommand.setStatus("onSale");
-        productRepo.save(productCommand);
-        return productCommand;
+    public Product create(ProductCommand productCommand) {
+        Product product = new Product();
+        product.setProductName(productCommand.getProductName());
+        product.setPrice(productCommand.getPrice());
+        product.setUnit(productCommand.getUnit());
+        product.setDesc(productCommand.getDesc());
+        product.setStatus("onSale");
+        productRepo.save(product);
+        return product;
     }
 
 }

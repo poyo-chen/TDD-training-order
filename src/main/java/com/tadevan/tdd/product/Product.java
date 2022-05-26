@@ -5,11 +5,10 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-public class ProductDto implements ProductCommand{
-
+public class Product {
     private String productName;
     private String desc;
     private BigDecimal price;
     private String unit;
-
+    private String status;
 }
